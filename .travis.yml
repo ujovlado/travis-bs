@@ -1,0 +1,33 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      before_install:
+        - docker -v
+      before_script:
+        - docker-compose -v
+      script:
+        - echo "test 1"
+        - echo "test 2"
+      branches:
+        except:
+          - master
+
+    - stage: test
+      before_install:
+        - docker -v
+      before_script:
+        - docker-compose -v
+      script:
+        - echo "test 3"
+        - echo "test 4"
+      branches:
+        only:
+          - master
+      
