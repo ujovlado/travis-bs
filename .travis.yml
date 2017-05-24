@@ -19,7 +19,7 @@ jobs:
         except:
           - master
 
-    - stage: test
+    - stage: deploy
       before_install:
         - docker -v
       before_script:
