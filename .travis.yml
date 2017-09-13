@@ -22,6 +22,7 @@ jobs:
 
     - stage: deploy
       script:
+        - echo "a" | grep "b"
         - echo "test 3"
         - echo "test 4"
       if: branch = master
