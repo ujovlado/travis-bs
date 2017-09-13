@@ -9,23 +9,17 @@ language: bash
 services:
   - docker
 
+before_install:
+  - parallel --version
+
 jobs:
   include:
     - stage: test
-      before_install:
-        - docker -v
-      before_script:
-        - docker-compose -v
       script:
         - echo "test 1"
         - echo "test 2"
-      if: branch != master
 
     - stage: deploy
-      before_install:
-        - docker -v
-      before_script:
-        - docker-compose -v
       script:
         - echo "test 3"
         - echo "test 4"
