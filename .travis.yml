@@ -1,29 +1,12 @@
 sudo: required
 
-stages:
-  - test
-  - deploy
-
 language: bash
 
 services:
   - docker
 
-before_install:
-  - sudo apt-get -y install parallel
-  - parallel --version
-
-jobs:
-  include:
-    - stage: test
-      script:
-        - echo "test 1"
-        - echo "test 2"
-
-    - stage: deploy
-      script:
-        - echo "a" | grep "b"
-        - echo "test 3"
-        - echo "test 4"
-      if: branch = master
+script:
+  - echo "a" | grep "b"
+  - echo "test 3"
+  - echo "test 4"
       
