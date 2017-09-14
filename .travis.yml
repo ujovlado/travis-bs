@@ -6,6 +6,7 @@ services:
   - docker
 
 script:
+  - set -e
   - echo "a" | grep "b"
   - echo "test 3"
   - echo "test 4"
