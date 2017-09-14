@@ -5,8 +5,10 @@ language: bash
 services:
   - docker
 
-script:
+before_script:
   - set -e
+
+script:
   - echo "a" | grep "b"
   - echo "test 3"
   - echo "test 4"
