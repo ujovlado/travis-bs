@@ -9,7 +9,7 @@ before_script:
   - set -e
 
 script:
-  - echo "a" | grep "b"
-  - echo "test 3"
-  - echo "test 4"
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_TAG
+
       
